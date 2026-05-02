@@ -30,8 +30,10 @@ pet-vacinas/
 |        |         └── 📄 Arquivo
 |        |
 |        └── 📂 resources/                       # Guarda informações que o programa precisa ler, mas não é Java (Opcional).
-| 
-├── 📄 Arquivo.xml
+|
+├── 📄 LICENSE
+├── 📄 .gitignore
+├── 📄 pom.xml
 └── 📄 README.md
 ```
 > Essa estrutura é apenas um esboço. Portanto, pode ser alterada conforme o passar do tempo.
@@ -79,6 +81,14 @@ Um agradecimento a todas as pessoas que contribuíram com este projeto:
         <img src="https://avatars.githubusercontent.com/u/200527859?v=4" width="100px; height=100px" alt="Foto de Murilo Henderson no GitHub"/><br>
         <sub>
           <b>Murilo Henderson</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/MuriloSouusa" title="Github de Murilo Sousa">
+        <img src="https://avatars.githubusercontent.com/u/203001174?v=4" width="100px; height=100px" alt="Foto de Murilo Sousa no GitHub"/><br>
+        <sub>
+          <b>Murilo Sousa</b>
         </sub>
       </a>
     </td>
