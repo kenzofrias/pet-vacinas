@@ -88,3 +88,10 @@ Um agradecimento a todas as pessoas que contribuíram com este projeto:
 ## 📝 Licença
 
 Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE) para mais detalhes.
+
+---
+<div align="center">
+  
+  **Obrigado pela visita!**
+  
+</div>
