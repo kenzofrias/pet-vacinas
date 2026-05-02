@@ -45,6 +45,14 @@ Um agradecimento a todas as pessoas que contribuíram com este projeto:
 <table>
   <tr>
     <td align="center">
+      <a href="https://github.com/apedror14" title="Github de Antonio Pedro">
+        <img src="https://avatars.githubusercontent.com/u/212066811?v=4" width="100px; height=100px" alt="Foto de Antonio Pedro no GitHub"/><br>
+        <sub>
+          <b>Antonio Pedro</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
     <a href="https://github.com/DanVVG" title="Github de Daniel Vitor">
       <img src="https://avatars.githubusercontent.com/u/220648971?v=4" width="100px; height=100px" alt="Foto de Daniel Vitor no GitHub"/><br>
       <sub>
