@@ -53,6 +53,14 @@ Um agradecimento a todas as pessoas que contribuíram com este projeto:
     </a>
   </td>
   <td align="center">
+    <a href="https://github.com/EduardoSantrovitsch" title="Github de Eduardo Santrovitsch">
+      <img src="https://avatars.githubusercontent.com/u/211915639?v=4" width="100px; height=100px" alt="Foto de Eduardo Santrovitsch no GitHub"/><br>
+      <sub>
+        <b>Eduardo Santrovitsch</b>
+      </sub>
+    </a>
+  </td>
+  <td align="center">
     <a href="https://github.com/Gab9082" title="Github de Gabriel Chaves">
       <img src="https://avatars.githubusercontent.com/u/230392743?v=4" width="100px; height=100px" alt="Foto de Gabriel Chaves no GitHub"/><br>
       <sub>
