@@ -11,30 +11,45 @@ Aplicação para Controle de Vacinas de Animais PET baseada em Console User Inte
 ```text
 pet-vacinas/
 │
-├── 📂 src/
-│   └── 📂 main/
-|        ├── 📂 java/
-|        |    ├── 📂 app/
-|        |    |    └── 📄 Arquivo                       # Main - ponto de entrada do programa.
-|        |    |
-|        |    ├── 📂 model/                       # Contém todas as entidades utilizadas no programa - dados.
-|        |    |    └── 📄 Arquivo
-|        |    |
-|        |    ├── 📂 service/                       # Contém todas as lógicas para cada entidade - lógica.
-|        |    |    └── 📄 Arquivo
-|        |    |
-|        |    ├── 📂 repository/                       # Guarda todos os dados em memória - armazenamento.
-|        |    |    └── 📄 Arquivo
-|        |    |
-|        |    └── 📂 ui/                       # Guarda tudo o que o usuário vê no terminal (Lanterna) - interface.
-|        |         └── 📄 Arquivo
-|        |
-|        └── 📂 resources/                       # Guarda informações que o programa precisa ler, mas não é Java (Opcional).
-|
-├── 📄 LICENSE
-├── 📄 .gitignore
-├── 📄 pom.xml
-└── 📄 README.md
+├── src/
+│   └── main/
+│   │  ├── java/
+│   │   │   └── app/
+│   │   │       ├── Main.java                 # Ponto de entrada
+│   │   │       │
+│   │   │       ├── model/                    # Entidades do domínio
+│   │   │       │   ├── Animal.java
+│   │   │       │   ├── Vacina.java
+│   │   │       │   └── ...
+│   │   │       │
+│   │   │       ├── repository/               # Armazenamento em memória
+│   │   │       │   ├── AnimalRepository.java
+│   │   │       │   ├── VacinaRepository.java
+│   │   │       │   └── ...
+│   │   │       │
+│   │   │       ├── service/                  # Regras de negócio
+│   │   │       │   ├── AnimalService.java
+│   │   │       │   ├── VacinaService.java
+│   │   │       │   └── ...
+│   │   │       │
+│   │   │       ├── ui/                       # Interface com o usuário
+│   │   │       │   ├── Menu.java
+│   │   │       │   └── ...
+│   │   │       │
+│   │   │       └── util/                     # Classes auxiliares (opcional)
+│   │   │           └── ...
+│   │   │
+│   │   └── resources/
+│   │
+│   └── test/
+│       └── java/
+│           └── petvacinas/
+│               └── ...
+│
+├── pom.xml
+├── README.md
+├── LICENSE
+└── .gitignore
 ```
 > Essa estrutura é apenas um esboço. Portanto, pode ser alterada conforme o passar do tempo.
 
