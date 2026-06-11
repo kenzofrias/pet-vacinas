@@ -13,43 +13,55 @@ pet-vacinas/
 │
 ├── src/
 │   └── main/
-│   │  ├── java/
-│   │   │   └── app/
-│   │   │       ├── Main.java                 # Ponto de entrada
-│   │   │       │
-│   │   │       ├── model/                    # Entidades do domínio
-│   │   │       │   ├── Animal.java
-│   │   │       │   ├── Vacina.java
-│   │   │       │   └── ...
-│   │   │       │
-│   │   │       ├── repository/               # Armazenamento em memória
-│   │   │       │   ├── AnimalRepository.java
-│   │   │       │   ├── VacinaRepository.java
-│   │   │       │   └── ...
-│   │   │       │
-│   │   │       ├── service/                  # Regras de negócio
-│   │   │       │   ├── AnimalService.java
-│   │   │       │   ├── VacinaService.java
-│   │   │       │   └── ...
-│   │   │       │
-│   │   │       ├── ui/                       # Interface com o usuário
-│   │   │       │   ├── Menu.java
-│   │   │       │   └── ...
-│   │   │       │
-│   │   │       └── util/                     # Classes auxiliares (opcional)
-│   │   │           └── ...
-│   │   │
-│   │   └── resources/
-│   │
-│   └── test/
-│       └── java/
-│           └── petvacinas/
-│               └── ...
+│       ├── java/
+│       │   └── app/
+│       │       │
+│       │       ├── Main.java                     # Ponto de entrada da aplicação.
+│       │       │
+│       │       ├── model/                        # Entidades do domínio. Representam os dados do sistema.
+│       │       │   ├── Animal.java
+│       │       │   ├── Vacina.java
+│       │       │   └── ...
+│       │       │
+│       │       ├── repository/                   # Contratos de acesso aos dados (interfaces).
+│       │       │   │                             # Define o que pode ser feito, sem definir como.
+│       │       │   ├── AnimalRepository.java
+│       │       │   ├── VacinaRepository.java
+│       │       │   └── ...
+│       │       │
+│       │       ├── persistence/                  # Implementações dos repositories.
+│       │       │   │                             # Responsável pela persistência em banco de dados.
+│       │       │   ├── AnimalRepositoryJdbc.java
+│       │       │   ├── VacinaRepositoryJdbc.java
+│       │       │   └── ...
+│       │       │
+│       │       ├── service/                      # Regras de negócio do sistema.
+│       │       │   │                             # Faz a ponte entre UI e persistência.
+│       │       │   ├── AnimalService.java
+│       │       │   ├── AnimalServiceImpl.java
+│       │       │   └── ...
+│       │       │
+│       │       ├── database/                     # Infraestrutura de acesso ao banco.
+│       │       │   │                             # Gerencia conexões e configurações.
+│       │       │   ├── ConnectionFactory.java
+│       │       │   └── DatabaseConfig.java
+│       │       │
+│       │       ├── ui/                           # Interface do usuário (Lanterna).
+│       │       │   │                             # Exibe telas e captura entradas.
+│       │       │   ├── Menu.java
+│       │       │   └── ...
+│       │       │
+│       │       └── util/                         # Classes auxiliares reutilizáveis.
+│       │                                         # Ex.: validadores, formatadores e helpers.
+│       │
+│       └── resources/                            # Arquivos não Java utilizados pela aplicação.
+│           │                                     # Configurações, scripts SQL e recursos externos.
+│           ├── config.properties
+│           └── sql/
 │
-├── pom.xml
-├── README.md
-├── LICENSE
-└── .gitignore
+├── pom.xml                                       # Dependências e configuração do Maven.
+│
+└── README.md                                     # Documentação do projeto.
 ```
 > Essa estrutura é apenas um esboço. Portanto, pode ser alterada conforme o passar do tempo.
 
