@@ -1,69 +1,115 @@
 # PET Vacinas (Java)
 
-Aplicação para Controle de Vacinas de Animais PET baseada em Console User Interface (CUI).
+Aplicação para Controle de Vacinas de Animais PET baseada em Console User Interface (CUI) / Terminal User Interface (TUI). Desenvolvido como projeto final da disciplina de Programação Orientada a Objetos (POO).
+
+---
 
 ## ⚡ Tecnologias Utilizadas
-* Java
-* [Tecnologia 2]
+
+* **Java 17** - Linguagem principal do projeto.
+* **Lanterna 3.1.2** - Biblioteca Java pura para construção da interface gráfica no terminal.
+* **H2 Database** - Banco de dados relacional embarcado (em arquivo local) para persistência robusta dos dados.
+* **JDBC** - Java Database Connectivity para comunicação com a persistência de banco de dados.
+* **Maven** - Gerenciador de dependências e ferramentas de compilação.
+* **JUnit 5** - Framework de testes para as regras de negócio.
+
+---
+
+## 🚀 Funcionalidades da Aplicação
+
+O sistema atende de forma integral a todos os requisitos solicitados:
+* **Cadastro de Animais**: Formulário interativo para salvar animais com nome, raça e tutor/dono.
+* **Listagem de Animais**: Exibição em formato de tabela de todos os animais cadastrados.
+* **Cadastro de Vacinas**: Formulário para registrar novas vacinas com nome e fabricante.
+* **Listagem de Vacinas**: Exibição em formato de tabela de todas as vacinas disponíveis.
+* **Registro de Vacinação**: Fluxo interativo associando um animal e uma vacina, definindo a data de aplicação e o veterinário/responsável.
+* **Carteira de Vacinação (Histórico)**: Exibição detalhada de todas as vacinações associadas a um animal selecionado em formato tabular.
+* **Persistência de Dados**: Diferencial na avaliação com banco H2 (esforço extra implementado com sucesso).
+
+---
 
 ## 📁 Estrutura do Projeto
 
 ```text
 pet-vacinas/
-│
+├── maven_bin/                    # Executável e binários locais do Maven.
 ├── src/
-│   └── main/
-│       ├── java/
-│       │   └── app/
-│       │       │
-│       │       ├── Main.java                     # Ponto de entrada da aplicação.
-│       │       │
-│       │       ├── model/                        # Entidades do domínio. Representam os dados do sistema.
-│       │       │   ├── Animal.java
-│       │       │   ├── Vacina.java
-│       │       │   └── ...
-│       │       │
-│       │       ├── repository/                   # Contratos de acesso aos dados (interfaces).
-│       │       │   │                             # Define o que pode ser feito, sem definir como.
-│       │       │   ├── AnimalRepository.java
-│       │       │   ├── VacinaRepository.java
-│       │       │   └── ...
-│       │       │
-│       │       ├── persistence/                  # Implementações dos repositories.
-│       │       │   │                             # Responsável pela persistência em banco de dados.
-│       │       │   ├── AnimalRepositoryJdbc.java
-│       │       │   ├── VacinaRepositoryJdbc.java
-│       │       │   └── ...
-│       │       │
-│       │       ├── service/                      # Regras de negócio do sistema.
-│       │       │   │                             # Faz a ponte entre UI e persistência.
-│       │       │   ├── AnimalService.java
-│       │       │   ├── AnimalServiceImpl.java
-│       │       │   └── ...
-│       │       │
-│       │       ├── database/                     # Infraestrutura de acesso ao banco.
-│       │       │   │                             # Gerencia conexões e configurações.
-│       │       │   ├── ConnectionFactory.java
-│       │       │   └── DatabaseConfig.java
-│       │       │
-│       │       ├── ui/                           # Interface do usuário (Lanterna).
-│       │       │   │                             # Exibe telas e captura entradas.
-│       │       │   ├── Menu.java
-│       │       │   └── ...
-│       │       │
-│       │       └── util/                         # Classes auxiliares reutilizáveis.
-│       │                                         # Ex.: validadores, formatadores e helpers.
-│       │
-│       └── resources/                            # Arquivos não Java utilizados pela aplicação.
-│           │                                     # Configurações, scripts SQL e recursos externos.
-│           ├── config.properties
-│           └── sql/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── app/
+│   │   │       ├── Main.java             # Ponto de entrada da aplicação.
+│   │   │       │
+│   │   │       ├── database/             # Conectividade e configurações do banco.
+│   │   │       │   ├── ConnectionFactory.java
+│   │   │       │   └── DatabaseConfig.java
+│   │   │       │
+│   │   │       ├── model/                # Entidades do domínio (Animal, Vacina, Vacinacao).
+│   │   │       │   ├── Animal.java
+│   │   │       │   ├── Vacina.java
+│   │   │       │   └── Vacinacao.java
+│   │   │       │
+│   │   │       ├── repository/           # Contratos de acesso aos dados (interfaces).
+│   │   │       │   ├── AnimalRepository.java
+│   │   │       │   ├── VacinaRepository.java
+│   │   │       │   └── VacinacaoRepository.java
+│   │   │       │
+│   │   │       ├── persistence/          # Implementações concreta com JDBC.
+│   │   │       │   ├── AnimalRepositoryJdbc.java
+│   │   │       │   ├── VacinaRepositoryJdbc.java
+│   │   │       │   └── VacinacaoRepositoryJdbc.java
+│   │   │       │
+│   │   │       ├── service/              # Regras de negócio da aplicação.
+│   │   │       │   ├── AnimalService.java / AnimalServiceImpl.java
+│   │   │       │   ├── VacinaService.java / VacinaServiceImpl.java
+│   │   │       │   └── VacinacaoService.java / VacinacaoServiceImpl.java
+│   │   │       │
+│   │   │       ├── ui/                   # Interface Gráfica de Console (Lanterna).
+│   │   │       │   └── Menu.java
+│   │   │       │
+│   │   │       └── util/                 # Classes auxiliares reutilizáveis.
+│   │   │           └── UtilResource.java
+│   │   │
+│   │   └── resources/                    # Arquivos de configurações e scripts SQL.
+│   │       ├── config.properties         # Configurações de acesso ao banco H2.
+│   │       └── sql/
+│   │           └── schema.sql            # Script de criação das tabelas.
+│   │
+│   └── test/                             # Testes Unitários de Regras de Negócio.
+│       └── java/app/service/
+│           ├── AnimalServiceTest.java
+│           ├── VacinaServiceTest.java
+│           └── VacinacaoServiceTest.java
 │
-├── pom.xml                                       # Dependências e configuração do Maven.
-│
-└── README.md                                     # Documentação do projeto.
+├── pom.xml                               # Dependências e configuração do Maven.
+└── README.md                             # Documentação do projeto.
 ```
-> Essa estrutura é apenas um esboço. Portanto, pode ser alterada conforme o passar do tempo.
+
+---
+
+## 🛠️ Como Executar o Projeto
+
+Certifique-se de possuir o Java JDK 17 ou superior instalado e configurado no seu ambiente.
+
+### Executando a Aplicação
+Para compilar e iniciar a interface no terminal (CUI):
+```bash
+./maven_bin/bin/mvn clean compile exec:java -Dexec.mainClass="app.Main"
+```
+
+### Executando a Suíte de Testes
+Para rodar todos os testes de unidade JUnit 5:
+```bash
+./maven_bin/bin/mvn clean test
+```
+
+---
+
+## 📺 Apresentação e Links de Entrega
+
+* **Link do Vídeo Demonstrativo no YouTube**: `[Adicione aqui o link do vídeo de até 3 minutos]`
+* **Link do Repositório do Projeto**: `https://github.com/kenzofrias/pet-vacinas`
+
+---
 
 ## 🤝 Colaboradores
 
@@ -148,7 +194,7 @@ Um agradecimento a todas as pessoas que contribuíram com este projeto:
 
 ## 📝 Licença
 
-Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE) para mais detalhes.
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
 <div align="center">
